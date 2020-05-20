@@ -17,7 +17,6 @@ import { SNAP_POINT, SNAP_LINE, SNAP_SEGMENT, SNAP_GRID, SNAP_GUIDE } from '../.
 import { MODE_SNAPPING } from '../../constants';
 import * as SharedStyle from '../../shared-style';
 import { MdAddCircle, MdWarning } from 'react-icons/md';
-import { VERSION } from '../../version';
 
 var footerBarStyle = {
   position: 'absolute',
@@ -25,7 +24,7 @@ var footerBarStyle = {
   lineHeight: '14px',
   fontSize: '12px',
   color: SharedStyle.COLORS.white,
-  backgroundColor: SharedStyle.SECONDARY_COLOR.alt,
+  backgroundColor: SharedStyle.COLORS.blue,
   padding: '3px 1em',
   margin: 0,
   boxSizing: 'border-box',
@@ -222,7 +221,7 @@ var FooterBar = function (_Component) {
           'div',
           {
             style: rightTextStyle,
-            title: this.props.softwareSignature + (this.props.softwareSignature.includes('React-Planner') ? '' : ' using React-Planner ' + VERSION)
+            title: this.props.softwareSignature + (this.props.softwareSignature.includes('React-Planner') ? '' : ``)
           },
           this.props.softwareSignature
         ) : null,
