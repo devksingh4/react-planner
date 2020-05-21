@@ -1,8 +1,7 @@
 // COLORS
 export var COLORS = {
   white: '#FFF',
-  black: '#000',
-  blue: '#153B50'
+  black: '#000'
 };
 
 export var MATERIAL_COLORS = {
@@ -25,7 +24,7 @@ export var MATERIAL_COLORS = {
     purple: '#9C27B0',
     red: '#F44336',
     teal: '#009688',
-    yellow: '#FFEB3B',
+    yellow: '#FFEB3B'
   }
 };
 

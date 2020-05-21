@@ -1,22 +1,22 @@
-const electron = window.require('electron');
-const ipcRenderer  = electron.ipcRenderer;
+var electron = window.require('electron');
+var ipcRenderer = electron.ipcRenderer;
 
 export function browserDownload(json) {
-  let output = JSON.stringify(json);
-  ipcRenderer.sendSync('layout-data', { output });
+  var output = JSON.stringify(json);
+  ipcRenderer.sendSync('layout-data', { output: output });
 }
 
 export function browserUpload() {
   return new Promise(function (resolve, reject) {
 
-    let fileInput = document.createElement('input');
+    var fileInput = document.createElement('input');
     fileInput.type = 'file';
 
     fileInput.addEventListener('change', function (event) {
-      let file = event.target.files[0];
-      let reader = new FileReader();
-      reader.addEventListener('load', (fileEvent) => {
-        let loadedData = fileEvent.target.result;
+      var file = event.target.files[0];
+      var reader = new FileReader();
+      reader.addEventListener('load', function (fileEvent) {
+        var loadedData = fileEvent.target.result;
         resolve(loadedData);
       });
       reader.readAsText(file);

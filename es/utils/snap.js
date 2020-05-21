@@ -21,7 +21,7 @@ export var SNAP_MASK = new Map({
   SNAP_POINT: true,
   SNAP_LINE: true,
   SNAP_SEGMENT: true,
-  SNAP_GRID: false,
+  SNAP_GRID: true,
   SNAP_GUIDE: true
 });
 

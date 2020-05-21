@@ -14,7 +14,6 @@ import { MdSettings, MdUndo, MdDirectionsRun } from 'react-icons/md';
 import { FaFile, FaMousePointer, FaPlus } from 'react-icons/fa';
 import ToolbarButton from './toolbar-button';
 import ToolbarSaveButton from './toolbar-save-button';
-import ToolbarLoadButton from './toolbar-load-button';
 import If from '../../utils/react-if';
 import { MODE_IDLE, MODE_3D_VIEW, MODE_3D_FIRST_PERSON, MODE_VIEWING_CATALOG, MODE_CONFIGURING_PROJECT } from '../../constants';
 import * as SharedStyle from '../../shared-style';
@@ -124,10 +123,7 @@ var Toolbar = function (_Component) {
         index: 1, condition: allowProjectFileSupport,
         dom: React.createElement(ToolbarSaveButton, { state: state })
       }, {
-        index: 2, condition: allowProjectFileSupport,
-        dom: React.createElement(ToolbarLoadButton, { state: state })
-      }, {
-        index: 3, condition: true,
+        index: 2, condition: true,
         dom: React.createElement(
           ToolbarButton,
           {
@@ -139,7 +135,7 @@ var Toolbar = function (_Component) {
           React.createElement(FaPlus, null)
         )
       }, {
-        index: 4, condition: true, dom: React.createElement(
+        index: 3, condition: true, dom: React.createElement(
           ToolbarButton,
           {
             active: [MODE_3D_VIEW].includes(mode),
@@ -150,7 +146,7 @@ var Toolbar = function (_Component) {
           React.createElement(Icon3D, null)
         )
       }, {
-        index: 5, condition: true, dom: React.createElement(
+        index: 4, condition: true, dom: React.createElement(
           ToolbarButton,
           {
             active: [MODE_IDLE].includes(mode),
@@ -161,7 +157,7 @@ var Toolbar = function (_Component) {
           [MODE_3D_FIRST_PERSON, MODE_3D_VIEW].includes(mode) ? React.createElement(Icon2D, { style: { color: alterateColor } }) : React.createElement(FaMousePointer, { style: { color: alterateColor } })
         )
       }, {
-        index: 6, condition: true, dom: React.createElement(
+        index: 5, condition: true, dom: React.createElement(
           ToolbarButton,
           {
             active: [MODE_3D_FIRST_PERSON].includes(mode),
@@ -172,7 +168,7 @@ var Toolbar = function (_Component) {
           React.createElement(MdDirectionsRun, null)
         )
       }, {
-        index: 7, condition: true, dom: React.createElement(
+        index: 6, condition: true, dom: React.createElement(
           ToolbarButton,
           {
             active: false,
@@ -183,7 +179,7 @@ var Toolbar = function (_Component) {
           React.createElement(MdUndo, null)
         )
       }, {
-        index: 8, condition: true, dom: React.createElement(
+        index: 7, condition: true, dom: React.createElement(
           ToolbarButton,
           {
             active: [MODE_CONFIGURING_PROJECT].includes(mode),

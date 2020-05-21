@@ -17,6 +17,7 @@ import { SNAP_POINT, SNAP_LINE, SNAP_SEGMENT, SNAP_GRID, SNAP_GUIDE } from '../.
 import { MODE_SNAPPING } from '../../constants';
 import * as SharedStyle from '../../shared-style';
 import { MdAddCircle, MdWarning } from 'react-icons/md';
+import { VERSION } from '../../version';
 
 var footerBarStyle = {
   position: 'absolute',
@@ -24,7 +25,7 @@ var footerBarStyle = {
   lineHeight: '14px',
   fontSize: '12px',
   color: SharedStyle.COLORS.white,
-  backgroundColor: SharedStyle.COLORS.blue,
+  backgroundColor: SharedStyle.SECONDARY_COLOR.alt,
   padding: '3px 1em',
   margin: 0,
   boxSizing: 'border-box',
@@ -148,70 +149,6 @@ var FooterBar = function (_Component) {
             'Zoom: ',
             zoom.toFixed(3),
             'X'
-          ),
-          React.createElement(
-            'div',
-            { style: leftTextStyle },
-            React.createElement(FooterToggleButton, {
-              state: this.state,
-              toggleOn: function toggleOn() {
-                updateSnapMask({ SNAP_POINT: true });
-              },
-              toggleOff: function toggleOff() {
-                updateSnapMask({ SNAP_POINT: false });
-              },
-              text: 'Snap PT',
-              toggleState: globalState.snapMask.get(SNAP_POINT),
-              title: translator.t('Snap to Point')
-            }),
-            React.createElement(FooterToggleButton, {
-              state: this.state,
-              toggleOn: function toggleOn() {
-                updateSnapMask({ SNAP_LINE: true });
-              },
-              toggleOff: function toggleOff() {
-                updateSnapMask({ SNAP_LINE: false });
-              },
-              text: 'Snap LN',
-              toggleState: globalState.snapMask.get(SNAP_LINE),
-              title: translator.t('Snap to Line')
-            }),
-            React.createElement(FooterToggleButton, {
-              state: this.state,
-              toggleOn: function toggleOn() {
-                updateSnapMask({ SNAP_SEGMENT: true });
-              },
-              toggleOff: function toggleOff() {
-                updateSnapMask({ SNAP_SEGMENT: false });
-              },
-              text: 'Snap SEG',
-              toggleState: globalState.snapMask.get(SNAP_SEGMENT),
-              title: translator.t('Snap to Segment')
-            }),
-            React.createElement(FooterToggleButton, {
-              state: this.state,
-              toggleOn: function toggleOn() {
-                updateSnapMask({ SNAP_GRID: true });
-              },
-              toggleOff: function toggleOff() {
-                updateSnapMask({ SNAP_GRID: false });
-              },
-              text: 'Snap GRD',
-              toggleState: globalState.snapMask.get(SNAP_GRID),
-              title: translator.t('Snap to Grid')
-            }),
-            React.createElement(FooterToggleButton, {
-              state: this.state,
-              toggleOn: function toggleOn() {
-                updateSnapMask({ SNAP_GUIDE: true });
-              },
-              toggleOff: function toggleOff() {
-                updateSnapMask({ SNAP_GUIDE: false });
-              },
-              text: 'Snap GDE',
-              toggleState: globalState.snapMask.get(SNAP_GUIDE),
-              title: translator.t('Snap to Guide')
-            })
           )
         ),
         this.props.footerbarComponents.map(function (Component, index) {
@@ -221,7 +158,7 @@ var FooterBar = function (_Component) {
           'div',
           {
             style: rightTextStyle,
-            title: this.props.softwareSignature + (this.props.softwareSignature.includes('React-Planner') ? '' : ``)
+            title: this.props.softwareSignature + (this.props.softwareSignature.includes('React-Planner') ? '' : '')
           },
           this.props.softwareSignature
         ) : null,
