@@ -125,14 +125,6 @@ export default class Toolbar extends Component {
           <MdUndo />
         </ToolbarButton>
       },
-      {
-        index: 6, condition: true, dom: <ToolbarButton
-          active={[MODE_CONFIGURING_PROJECT].includes(mode)}
-          tooltip={translator.t('Configure project')}
-          onClick={event => projectActions.openProjectConfigurator()}>
-          <MdSettings />
-        </ToolbarButton>
-      }
     ];
 
     sorter = sorter.concat(toolbarButtons.map((Component, key) => {
