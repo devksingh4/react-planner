@@ -1,7 +1,7 @@
 {
-  "name": "react-planner-electron",
-  "version": "2.1.2",
-  "description": "react-planner-electron is a React Component for plans design. Draw a 2D floorplan and navigate it in 3D mode.",
+  "name": "react-planner-gotron",
+  "version": "2.2.1",
+  "description": "react-planner-gotron is a React Component for plans design. Draw a 2D floorplan and navigate it in 3D mode.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",

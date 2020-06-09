@@ -157,7 +157,7 @@ var Toolbar = function (_Component) {
           [MODE_3D_FIRST_PERSON, MODE_3D_VIEW].includes(mode) ? React.createElement(Icon2D, { style: { color: alterateColor } }) : React.createElement(FaMousePointer, { style: { color: alterateColor } })
         )
       }, {
-        index: 6, condition: true, dom: React.createElement(
+        index: 5, condition: true, dom: React.createElement(
           ToolbarButton,
           {
             active: false,
