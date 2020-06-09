@@ -1,9 +1,12 @@
-const electron = window.require('electron');
-const ipcRenderer  = electron.ipcRenderer;
-
 export function browserDownload(json) {
   let output = JSON.stringify(json);
-  ipcRenderer.sendSync('layout-data', { output });
+  let ws = new WebSocket("ws://localhost:" + global.backendPort + "/web/app/events");
+  ws.onopen = () => {
+    ws.send(JSON.stringify({
+      "Event": "layout-data",
+      "AtrNameInFrontend": output,
+    }))
+  }
 }
 
 export function browserUpload() {

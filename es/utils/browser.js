@@ -1,9 +1,12 @@
-var electron = window.require('electron');
-var ipcRenderer = electron.ipcRenderer;
-
 export function browserDownload(json) {
   var output = JSON.stringify(json);
-  ipcRenderer.sendSync('layout-data', { output: output });
+  var ws = new WebSocket("ws://localhost:" + global.backendPort + "/web/app/events");
+  ws.onopen = function () {
+    ws.send(JSON.stringify({
+      "Event": "layout-data",
+      "AtrNameInFrontend": output
+    }));
+  };
 }
 
 export function browserUpload() {
